@@ -1,0 +1,165 @@
+/* Low-Energy Days Handbook — site styles */
+
+:root {
+  --bg: #fbfaf7;
+  --paper: #ffffff;
+  --ink: #2b2b2b;
+  --muted: #6b6b6b;
+  --accent: #8fa6a3;
+  --accent-soft: #e7efe8;
+  --border: #d9d9d9;
+  --card-bg: #f7f5f1;
+  --green: #6f9e8f;
+  --soft-green: #e9f1ec;
+}
+
+/* Reset */
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  line-height: 1.6;
+}
+
+a { color: var(--green); text-decoration: underline; }
+a:hover { color: #5b8677; }
+
+/* Header */
+.site-header {
+  background: var(--paper);
+  border-bottom: 1px solid var(--border);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.site-header .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-brand {
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--ink);
+  text-decoration: none;
+  margin-right: auto;
+}
+.site-brand span { color: var(--green); }
+
+.site-nav { display: flex; gap: 0.5rem; flex-wrap: wrap; list-style: none; margin: 0; padding: 0; }
+.site-nav li a {
+  padding: 0.45rem 0.85rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card-bg);
+  color: var(--ink);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+.site-nav li a:hover { background: var(--soft-green); border-color: var(--green); }
+
+/* Main */
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.page-title {
+  font-size: 2rem;
+  margin: 0 0 0.5rem;
+  color: var(--ink);
+}
+.page-subtitle {
+  color: var(--muted);
+  margin: 0 0 2rem;
+  font-size: 1.05rem;
+}
+
+/* Sections */
+section { margin-bottom: 3rem; }
+section h2 {
+  font-size: 1.4rem;
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--ink);
+  border-bottom: 2px solid var(--accent-soft);
+  padding-bottom: 0.4rem;
+}
+section h3 { font-size: 1.15rem; margin: 1.5rem 0 0.5rem; }
+p { margin: 0 0 1rem; }
+ul, ol { margin: 0 0 1rem 1.25rem; }
+li { margin-bottom: 0.4rem; }
+
+/* Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-decoration: none;
+  color: var(--ink);
+  display: block;
+  transition: transform 0.15s, border-color 0.15s;
+}
+.card:hover {
+  border-color: var(--green);
+  transform: translateY(-2px);
+}
+.card h3 { margin: 0 0 0.5rem; font-size: 1.05rem; color: var(--green); }
+.card p { margin: 0; font-size: 0.9rem; color: var(--muted); }
+
+/* Callout */
+.callout {
+  background: var(--soft-green);
+  border-left: 4px solid var(--green);
+  padding: 1rem 1.25rem;
+  border-radius: 0 8px 8px 0;
+  margin: 1.5rem 0;
+}
+.callout p { margin: 0; }
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid var(--border);
+  background: var(--paper);
+  padding: 2rem 0;
+  margin-top: 3rem;
+}
+.site-footer .inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+/* Print-friendly tweaks (also used by cards page) */
+@media print {
+  body { background: #fff; color: #000; }
+  .site-header, .site-nav, .site-footer, .no-print { display: none !important; }
+  .card-grid { grid-template-columns: repeat(3, 1fr); gap: 0.75rem; }
+  .card { break-inside: avoid; border: 1px solid #000; padding: 0.9rem; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}

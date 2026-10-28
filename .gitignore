@@ -1,0 +1,20 @@
+# .gitignore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build / output
+site/_build/
+dist/
+out/
+
+# Logs
+*.log

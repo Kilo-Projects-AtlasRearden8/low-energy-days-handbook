@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printable Routine Cards — Low-Energy Days Handbook</title>
+<meta name="description" content="Printable routine cards for low-energy and ADHD-friendly productivity. By Asdale Dynamics, LLC.">
+<link rel="stylesheet" href="css/style.css">
+<style>
+  /* Cards page layout */
+  .cards-page { max-width: 900px; margin: 0 auto; padding: 2rem 1.5rem 4rem; }
+  .cards-page .page-title { text-align: center; }
+  .cards-page .page-subtitle { text-align: center; }
+  .print-notice {
+    background: var(--accent-soft);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+  .print-notice button, .print-notice a.print-link {
+    background: var(--green);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .print-notice button:hover, .print-notice a.print-link:hover { background: #5b8677; }
+  .print-only { display: none; }
+  /* Card sheet for printing */
+  .card-sheet { display: none; }
+  @media print {
+    .cards-page { padding: 0; }
+    .print-notice, .no-print, .site-header, .site-footer { display: none !important; }
+    .card-sheet { display: block; }
+    body { background: #fff; }
+    .sheet { page-break-after: always; }
+    .sheet:last-child { page-break-after: auto; }
+    .card-grid-print {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.55in;
+      margin: 0.5in;
+    }
+    .print-card {
+      border: 2px solid #000;
+      border-radius: 10px;
+      padding: 0.55in 0.5in;
+      break-inside: avoid;
+      background: #fff;
+      page-break-inside: avoid;
+      position: relative;
+    }
+    .print-card .cut { position: absolute; top: 0; left: 0; right: 0; bottom: 0; border: 1px dashed #666; border-radius: 10px; pointer-events: none; }
+    .print-card h3 { margin: 0 0 0.35rem; font-size: 1.15rem; color: #000; }
+    .print-card p { margin: 0 0 0.5rem; font-size: 0.85rem; color: #111; line-height: 1.45; }
+    .print-card .steps { margin: 0.4rem 0 0; padding-left: 0.9rem; font-size: 0.85rem; color: #222; }
+    .print-card .steps li { margin-bottom: 0.18rem; }
+    .print-card .label { font-size: 0.7rem; letter-spacing: 0.08em; color: #555; text-transform: uppercase; margin-bottom: 0.25rem; display: block; }
+    .blank-card { border-style: dashed; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-header no-print">
+  <div class="inner">
+    <a href="index.html" class="site-brand">Low-Energy Days <span>Handbook</span></a>
+    <ul class="site-nav">
+      <li><a href="index.html">Handbook</a></li>
+    </ul>
+  </div>
+</header>
+
+<div class="cards-page">
+  <h1 class="page-title">Printable Routine Cards</h1>
+  <p class="page-subtitle">Print, cut out, and keep nearby for low-energy days.</p>
+
+  <div class="print-notice">
+    <p>Print this page to get cut-out cards. Choose landscape orientation if your browser offers it.</p>
+    <button onclick="window.print()">Print Cards</button>
+    <a href="index.html" class="print-link" style="margin-left:0.75rem;">Back to Handbook</a>
+  </div>
+
+  <p>Each card has one gentle practice. Keep them where you make decisions — the kitchen table, your desk, your nightstand. On a low-energy day, pick one card and follow it.</p>
+
+  <!-- Print-only sheet -->
+  <div class="card-sheet">
+    <div class="sheet">
+      <div class="card-grid-print">
+        <!-- Card 1: Pick One Task -->
+        <article class="print-card">
+          <span class="label">Pick One Task</span>
+          <h3>One Task Only</h3>
+          <p>Just one task. Not a list. It can be tiny: drink water, hang up one towel, open the laptop. Tiny counts.</p>
+          <ul class="steps">
+            <li>Choose one thing</li>
+            <li>Do it (or try for 5 minutes)</li>
+            <li>Stop — you are done</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+        <!-- Card 2: Gentle Schedule -->
+        <article class="print-card">
+          <span class="label">Gentle Schedule</span>
+          <h3>Soft Times, Not Deadlines</h3>
+          <p>Think in blocks: morning, afternoon, evening. One or two gentle intentions per block. No times attached.</p>
+          <ul class="steps">
+            <li>Morning: one small thing if able</li>
+            <li>Afternoon: rest if needed</li>
+            <li>Evening: get ready for bed when ready</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+        <!-- Card 3: Rest Without Guilt -->
+        <article class="print-card">
+          <span class="label">Rest Without Guilt</span>
+          <h3>Rest Is the Plan</h3>
+          <p>You do not have to earn rest. Lying down, watching a show, or doing nothing — all valid. No guilt.</p>
+          <ul class="steps">
+            <li>Rest fully</li>
+            <li>Say: "I am allowed to rest"</li>
+            <li>Being is enough</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+        <!-- Card 4: Energy Tracking -->
+        <article class="print-card">
+          <span class="label">Energy Tracking</span>
+          <h3>Today's Energy</h3>
+          <p>One word. No judging. No fixing.</p>
+          <ul class="steps">
+            <li>High / Medium / Low / Empty / Foggy</li>
+            <li>Write the word down</li>
+            <li>Plan gently around it</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+        <!-- Card 5: Low-Demand Routine -->
+        <article class="print-card blank-card">
+          <span class="label">Low-Demand Routine</span>
+          <h3>My Gentle Routine</h3>
+          <p>2&ndash;4 steps under five minutes each. Write your own.</p>
+          <ul class="steps">
+            <li>____________________</li>
+            <li>____________________</li>
+            <li>____________________</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+        <!-- Card 6: Blank -->
+        <article class="print-card blank-card">
+          <span class="label">Blank Card</span>
+          <h3>Make Your Own</h3>
+          <p>Write a practice that fits your life.</p>
+          <ul class="steps">
+            <li>____________________</li>
+            <li>____________________</li>
+            <li>____________________</li>
+          </ul>
+          <div class="cut"></div>
+        </article>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer no-print">
+  <div class="inner">
+    <p>&copy; 2026 <strong>Asdale Dynamics, LLC</strong> (Indiana, formed October 2026). MIT License.</p>
+  </div>
+</footer>
+
+</body>
+</html>
